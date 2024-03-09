@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: data-service-ClusterIP
+  name: data-service-clusterip
 spec:
   selector:
     app: data-service

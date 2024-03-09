@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: data-service
-        image: gcr.io/firstk8sproject-416700/data-service:latest
+        image: gcr.io/firstk8sproject-416700/data_service:v1
         ports:
         - containerPort: 80
