@@ -51,6 +51,7 @@ jobs:
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
+
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
@@ -60,8 +61,7 @@ jobs:
     - name: Deploy
       run: |-
         kubectl delete -f ./manifests/data_service-deployment.yaml
-        kubectl delete -f ./manifests/data_service-service.yaml
         kubectl apply -f ./manifests/data_service-deployment.yaml
-        kubectl apply -f ./manifests/data_service-service.yaml
-        kubectl get pods
-        kubectl get svc
+        
+        kubectl set image deployment/data-service-deployment api-service="$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
+
