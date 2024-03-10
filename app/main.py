@@ -28,7 +28,7 @@ def getdata(options):
 
             return jsonify(state_data), 200
 
-        elif options == "codes":
+        elif options == "code":
             return data, 200
 
     except requests.exceptions.RequestException as e:
