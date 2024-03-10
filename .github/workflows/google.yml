@@ -36,11 +36,9 @@ jobs:
       run: |-
         gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://$GAR_ZONE-docker.pkg.dev
 
-    # Install project dependencies
-    - name: Install Dependencies
+    - name: Pull Docker image
       run: |
-        python -m pip install --upgrade pip
-        python -m pip install -r requirements.txt  
+        docker pull $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG
 
     # Get the GKE credentials so we can deploy to the cluster
     - name: Set up GKE credentials
