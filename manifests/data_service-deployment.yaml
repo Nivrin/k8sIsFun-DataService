@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: data-service
-        image: gcr.io/firstk8sproject-416700/data_service:v1
+        image: gcr.io/${{ secrets.GKE_PROJECT }}/data_service:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 80
