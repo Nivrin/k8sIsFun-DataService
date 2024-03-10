@@ -58,6 +58,7 @@ jobs:
     # Run tests
     - name: Run Tests
       run: |
+        pwd
         ls
         docker run --rm $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG python -m unittest discover -s tests -p 'test_*'
 
