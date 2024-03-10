@@ -1,4 +1,4 @@
-name: Build and Deploy to GKE
+name: Build, Test, and Deploy to GKE
 
 on:
   push:
@@ -16,7 +16,7 @@ env:
 
 jobs:
   setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
+    name: Setup, Build,Test, Publish, and Deploy
     runs-on: ubuntu-latest
     environment: production
 
@@ -51,6 +51,11 @@ jobs:
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
+    # Run tests
+    - name: Run Tests
+      run: |
+        # Replace this command with the command to run your tests
+        python -m unittest discover -s tests -p '*_test.py'
 
     # Push the Docker image to Google Container Registry
     - name: Publish
