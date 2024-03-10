@@ -63,5 +63,5 @@ jobs:
         kubectl delete -f ./manifests/data_service-deployment.yaml
         kubectl apply -f ./manifests/data_service-deployment.yaml
         
-        kubectl set image deployment/data-service-deployment api-service="$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
+        kubectl set image deployment/data-service-deployment data-service="$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
 
