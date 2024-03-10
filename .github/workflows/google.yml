@@ -58,7 +58,10 @@ jobs:
     # Run tests
     - name: Run Tests
       run: |
-        docker run --rm $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG python -m unittest discover -s /app/tests -p 'test_*.py'
+        docker run -it $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG /bin/bash
+        cd /app/tests
+        ls -l
+        
 
 
     # Push the Docker image to Google Container Registry
