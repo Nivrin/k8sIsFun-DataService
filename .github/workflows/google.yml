@@ -11,7 +11,7 @@ env:
   GKE_ZONE: me-west1-a
   IMAGE: data_service
   IMAGE_TAG: v1
-  GAR_ZONE: europe-central2
+  GAR_ZONE: us
   GAR_REPO: gcr.io
 
 jobs:
