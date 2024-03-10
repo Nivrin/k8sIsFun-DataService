@@ -54,7 +54,6 @@ jobs:
     # Run tests
     - name: Run Tests
       run: |
-        # Replace this command with the command to run your tests
         python -m unittest discover -s tests -p '*_test.py'
 
     # Push the Docker image to Google Container Registry
