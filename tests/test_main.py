@@ -1,7 +1,5 @@
-# test_main.py
-
 import unittest
-from main import app
+from ..app.main import app
 
 
 class TestApp(unittest.TestCase):
