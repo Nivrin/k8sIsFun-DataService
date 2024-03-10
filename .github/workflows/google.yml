@@ -60,7 +60,9 @@ jobs:
     - name: Deploy
       run: |-
         pwd
+        ls
         cd ../../
+        ls
         pwd
         kubectl apply -f ../../manifests/data_service-deployment.yaml
         kubectl apply -f ../../manifests/data_service-service.yaml
