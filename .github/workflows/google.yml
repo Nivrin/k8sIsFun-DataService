@@ -60,7 +60,7 @@ jobs:
       run: |
         pwd
         ls
-        docker run --rm $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG python -m unittest discover -s '*tests' -p 'test_*'
+        docker run --rm $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG python -m unittest discover -s tests -p 'test_*.py'
 
     # Push the Docker image to Google Container Registry
     - name: Publish
