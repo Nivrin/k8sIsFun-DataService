@@ -55,14 +55,6 @@ jobs:
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
-    # Run tests
-    - name: Run Tests
-      run: |
-        docker run -it $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG /bin/bash
-        cd /app/tests
-        ls -l
-        
-
 
     # Push the Docker image to Google Container Registry
     - name: Publish
