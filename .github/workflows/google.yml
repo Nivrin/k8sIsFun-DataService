@@ -58,7 +58,8 @@ jobs:
     # Run tests
     - name: Run Tests
       run: |
-        docker run --rm $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG python -m unittest discover -s tests -p 'test_*'
+        ls
+        docker run --rm $GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG python -m unittest discover -s .\tests -p 'test_*'
 
     # Push the Docker image to Google Container Registry
     - name: Publish
@@ -68,8 +69,9 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
+        kubectl apply -f ./manifests/data_service-service.yaml
+        
         kubectl delete -f ./manifests/data_service-deployment.yaml
         kubectl apply -f ./manifests/data_service-deployment.yaml
-        
         kubectl set image deployment/data-service-deployment data-service="$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
 
