@@ -11,11 +11,10 @@ def getdata(options):
         "states": "https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json"
     }
 
-    url = urls[options]
-
     if options not in urls:
         return Response("Error: Invalid option", status=400)
 
+    url = urls[options]
     try:
         response = requests.get(url)
         response.raise_for_status()
