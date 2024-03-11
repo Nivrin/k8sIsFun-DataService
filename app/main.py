@@ -46,7 +46,7 @@ def welcome():
 
 @app.route("/healthz")
 def health_check():
-    return '', 200
+    return Response("", status=200)
 
 
 if __name__ == "__main__":
