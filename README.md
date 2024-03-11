@@ -1,3 +1,13 @@
+# k8sisfun Project
+
+Welcome to the k8sisfun project! This repository is part of a larger project.
+
+## Repositories
+
+- [API Service Repository](https://github.com/Nivrin/k8sIsFun-APIService)
+- [Data Service Repository](https://github.com/Nivrin/k8sIsFun-DataService)
+- [Simple Front Repository](https://github.com/Nivrin/k8sIsFun-SimpleFront)
+
 # Data Service Documentation
 
 Welcome to the documentation for my data service, which provides endpoints for retrieving state codes and names.
