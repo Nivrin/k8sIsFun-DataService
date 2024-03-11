@@ -61,7 +61,7 @@ To deploy the data service, follow these steps:
     docker push gcr.io/${PROJECT_ID}/data_service:v1
     ```
  5. Create a container cluster (if you haven't already done so)
- ```bash
+   ```bash
     gcloud container clusters create <name> --num-nodes=1 
     ```
 6. Apply the Kubernetes service configuration:
