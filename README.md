@@ -78,5 +78,5 @@ To deploy the data service, follow these steps:
 
 ## Continuous Integration/Continuous Deployment (CI/CD)
 
-We use GitHub Actions for CI/CD. The workflow defined in the `google.yml` file automates the building, publishing, and deploying processes.
+I use GitHub Actions for CI/CD. The workflow defined in the `google.yml` file automates the building, publishing, and deploying processes.
 
