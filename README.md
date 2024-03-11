@@ -1,4 +1,4 @@
-# k8sisfun Project
+# k8sIsFun Project
 
 Welcome to the k8sisfun project! This repository is part of a larger project.
 
@@ -64,16 +64,13 @@ To deploy the data service, follow these steps:
  ```bash
     gcloud container clusters create <name> --num-nodes=1 
     ```
-
-To deploy the data service on Kubernetes, use the provided deployment and service YAML files:
-
-1. Apply the Kubernetes service configuration:
+6. Apply the Kubernetes service configuration:
 
     ```bash
     kubectl apply -f manifests/data_service-service.yaml
     ```
 
-2. Apply the Kubernetes deployment configuration:
+7. Apply the Kubernetes deployment configuration:
 
     ```bash
     kubectl apply -f manifests/data_service-deployment.yaml
