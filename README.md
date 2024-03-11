@@ -1,6 +1,6 @@
 # k8sIsFun Project
 
-Welcome to the k8sisfun project! This repository is part of a larger project.
+Welcome to the k8sIsFun project! This repository is part of a larger project.
 
 ## Repositories
 
