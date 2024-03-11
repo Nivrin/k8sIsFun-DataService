@@ -34,7 +34,7 @@ To access the data service, you can send HTTP requests to the appropriate endpoi
 - **GET /states**: Retrieve state names and codes.
   Example: `curl http://<data_service_url>/states`
 
-## Installation and Setup
+## Deployment
 
 To deploy the data service, follow these steps:
 
@@ -53,10 +53,17 @@ To deploy the data service, follow these steps:
 3. Build the Docker image:
 
     ```bash
-    docker build -t data-service .
+    docker build -t gcr.io/${PROJECT_ID}/data_service:v1 .
     ```
+4. push the Docker image:
 
-## Deployment
+    ```bash
+    docker push gcr.io/${PROJECT_ID}/data_service:v1
+    ```
+5.Create a container cluster
+ ```bash
+    gcloud container clusters create mediumtuts-cluster --num-nodes=1 
+    ```
 
 To deploy the data service on Kubernetes, use the provided deployment and service YAML files:
 
