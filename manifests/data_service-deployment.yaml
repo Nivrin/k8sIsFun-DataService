@@ -18,13 +18,12 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "500m"  # Increase CPU request to 500 millicpu
-          limits:
-            memory: "512Mi"
-            cpu: "1000m"  # Increase CPU limit to 1000 millicpu
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          failureThreshold: 30
+          periodSeconds: 10
         readinessProbe:
           httpGet:
             path: /healthz
